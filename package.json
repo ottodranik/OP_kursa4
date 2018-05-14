@@ -1,0 +1,31 @@
+{
+  "name": "counter",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "react-scripts": "^1.0.2",
+    "react-test-renderer": "^15.6.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "history": "^4.7.2",
+    "moment": "^2.18.1",
+    "prop-types": "^15.5.10",
+    "qhistory": "^1.0.0",
+    "react": "^15.5.0",
+    "react-day-picker": "^6.1.0",
+    "react-dom": "^15.5.0",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.5.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "react-scripts test"
+  }
+}
