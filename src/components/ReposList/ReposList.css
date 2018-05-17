@@ -1,17 +1,9 @@
 .reposList {
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .reposFlex {
   display: flex;
-  /* flex-direction: row; */
   flex-wrap: wrap;
-  /* flex-flow: row wrap; */
-  /* justify-content: space-between; */
-  /* text-align: center; */
+  justify-content: space-between;
 }
-/* 
-.reposFlex:after {
-  content: "";
-  flex: auto;
-} */

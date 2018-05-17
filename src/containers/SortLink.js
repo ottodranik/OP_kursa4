@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import { setSort } from '../actions'
 import { Link } from 'react-router-dom'
-// import Sort from './components/Sort'
 import { withRouter } from 'react-router'
 import { stringify, parse } from 'qs'
 
@@ -47,7 +45,6 @@ const renderSort = (sort, order, disabled, text, location) => {
 }
 
 const Sort = ({ sortValue, sortType, disabled, text, location }) => {
-	// console.log(location)
 	const sort = sortType === 'sort' ? sortValue || location.query.sort : location.query.sort || DEFAULT.sort
 	const order = sortType === 'order' ? sortValue || location.query.order : location.query.order || DEFAULT.order
 	return (
@@ -61,18 +58,11 @@ const mapStateToProps = (state, ownProps) => ({
 	disabled: ownProps.value === ownProps.location.query[ownProps.type],
 	sortType: ownProps.type,
 	sortValue: ownProps.value,
-	text: ownProps.value
-})
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-	// onClick: () => {
-	// 	dispatch(setSort(ownProps.sorting, ownProps.sortkey))
-	// } 
+	text: ownProps.children
 })
 
 const SortLink = withRouter(connect(
-	mapStateToProps,
-	mapDispatchToProps
+	mapStateToProps
 )(Sort))
 
 export default SortLink

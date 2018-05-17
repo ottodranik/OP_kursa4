@@ -1,0 +1,9 @@
+.filter {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.filter label span {
+  font-weight: bold;
+  margin-right: 5px;
+}

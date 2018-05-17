@@ -4,26 +4,25 @@ import { FilterDate } from '../../containers/FilterDate'
 
 const FiltersList = ({ languages, filtersForks }) => {
   return (
-	<div style={{display: 'inline-block'}}>
-		<hr />
-		<div>
+	<div style={{display: 'inline-block', verticalAlign: 'middle'}}>
+		<div style={{backgroundColor: '#a9a9a9', padding: '5px 15px', borderRadius: '5px', marginLeft: '10px'}}>
 			<Filter value="has_open_issues" type="checkbox">
-        has open issues
-      </Filter>{", "}
+        Has open issues:
+      </Filter>
 			<Filter value="has_topics" type="checkbox" >
-       has topics
-      </Filter>{", "}
+        Has topics:
+      </Filter>
 			<Filter value="starred_gt" type="input_number" >
-       starred
-      </Filter>{", "}
+        Starred:
+      </Filter>
       <FilterDate value="updated_after" type="date" >
-       updated after
-      </FilterDate>{", "}
+        Updated after date:
+      </FilterDate>
       <Filter value="type" type="dropdown" options={filtersForks} >
-       type
-      </Filter>{", "}
+        Type:
+      </Filter>
       <Filter value="language" type="dropdown" options={['all'].concat(languages)} >
-       language
+        Language:
       </Filter> 
 		</div>
 	</div>)

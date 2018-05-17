@@ -1,13 +1,12 @@
 .card {
   display: inline-block;
-  width: 48.5%;
-  max-width: 48.5%;
+  width: 24%;
   height: 150px;
   overflow: hidden;
   background-color: #fff;
   transition: all 2s;
   padding: 10px;
-  margin: 5px 10px;
+  margin: 6px;
   box-sizing: border-box;
   cursor: pointer;
 
@@ -29,4 +28,9 @@
   max-height: 35px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.cardData {
+  display: block;
+  padding: 3px;
 }

@@ -1,0 +1,23 @@
+.sortList {
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
+}
+
+.sortList > span {
+  margin: 5px 15px;
+}
+
+.sortList > span > span {
+  font-weight: bold;
+  color: #777;
+}
+
+.sortList a {
+  color:#000;
+  text-decoration: underline;
+}
+
+.sortList a:visited {
+  color: default;
+}

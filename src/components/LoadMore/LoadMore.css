@@ -1,0 +1,11 @@
+.loadMore {
+  margin: 15px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* text-align: center; */
+  background-color: #999999;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}

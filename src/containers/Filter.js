@@ -5,7 +5,17 @@ import { withRouter } from 'react-router'
 import { buildQueryStringForToggle, buildQueryStringForInputNumber, buildQueryStringForDropdown } from '../libs/query';
 import DayPicker from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+import styles from '../components/FiltersList/FiltersList.css'
 import 'react-day-picker/lib/style.css'
+
+const LABELS = {
+	has_open_issues: 'Has open issues',
+	has_topics: 'Has topics',
+	starred_gt: 'Shared times',
+	type: 'Type',
+	language: 'Language',
+	updated_after: 'Updated after date',
+};
 
 const buildQueryString = (ownProps, value) => {
 	switch(ownProps.type) {
@@ -20,38 +30,42 @@ const buildQueryString = (ownProps, value) => {
 
 const renderCheckbox = (checked, text, onChange) => {
 	return (
-		<span>
-			<label>{text}: 
+		<div className={styles.filter}>
+			<label>
+				<span>{text}</span> 
 				<input onChange={onChange} type="checkbox" checked={checked} />
 			</label>
-		</span>
+		</div>
 	)
 }
 const renderInputNumber = (checked, text, onChange, defaultValue) => {	
 	let input;
 	return (
-		<span>
-			<label>{text}: 
-				<input value={defaultValue || 0} onChange={() => onChange(input.value || 0)} type="number" ref={node => {
+		<div className={styles.filter}>
+			<label>
+				<span>{text}</span>
+				<input value={defaultValue || 0} onChange={() => onChange(input.value || 0)} type="number" style={{width: '50px'}} ref={node => {
 					input = node
 				}} />
 			</label>
-		</span>
+		</div>
 	)
 }
 const renderDropdown = (checked, text, dropdownOptions, onChange) => {	
 	return (
-		<span>
-			<label>{text}: 
+		<div className={styles.filter}>
+			<label>
+				<span>{text}</span>
 				<select onChange={(e) => {
-						 onChange(e.target.value || dropdownOptions[0]) 
-					}}>
+						onChange(e.target.value || dropdownOptions[0]) 
+				}}
+				>
 					{dropdownOptions.map(option => 
 						<option key={option} value={option}>{option}</option>
 					)}
 				</select>
 			</label>
-		</span>
+		</div>
 	)
 }
 const FilterRender = ({ checked, filterType, filterValue, dropdownOptions, text, location, onChange }) => {	
@@ -69,7 +83,7 @@ const mapStateToProps = (state, ownProps) => ({
 	filterType: ownProps.type,
 	filterValue: ownProps.value,
 	dropdownOptions: ownProps.options,
-	text: ownProps.value
+	text: ownProps.children
 })
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	onChange: (value) => {

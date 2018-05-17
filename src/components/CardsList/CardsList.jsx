@@ -7,10 +7,16 @@ import styles from './header.css'
 const CardsList = () => (
 	<div>
 		<div className={styles.header}>
+			<span className={styles.projectTitle}>PROJECT</span>
 			<FiltersListCnt />
-			<SortingList />
 		</div>
-		<VisibleReposList />
+		<div style={{marginTop: '65px'}}>
+			<div>
+				<SortingList />
+			</div>
+			<VisibleReposList />
+		</div>
+		
 	</div>
 )
 
